@@ -9,7 +9,7 @@ export const QASchema = z.object({
   rabbiId: z.string(),
   title: z.string().optional(),
   subject: QASubjectSchema.optional(),
-  createdAt: z.string().optional(), // ISO 8601
+  createdAt: z.string().optional(),
 });
 
 export type QA = z.infer<typeof QASchema>;
