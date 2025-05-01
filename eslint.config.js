@@ -16,6 +16,21 @@ export default defineConfig([
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
+    files: ['**/*.{jsx,tsx}'],
+    plugins: {
+      react: pluginReact,
+    },
+    settings: {
+      react: {
+        version: '19.0.0', // Specify React version
+      },
+    },
+    rules: {
+      // With React 19, React no longer needs to be in scope
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
+  {
     files: ['**/*.{js,ts,jsx,tsx}'],
     plugins: { prettier: pluginPrettier },
     rules: {
