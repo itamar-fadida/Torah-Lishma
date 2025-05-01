@@ -1,0 +1,34 @@
+name: CI for TypeScript
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🧱 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🔎 Type check TS
+        run: npx tsc --noEmit
+
+      - name: 💅 Check code formatting with Prettier
+        run: npx prettier --write .
+
+      - name: 🧹 Lint with ESLint
+        run: npm run lint
+
+      - name: 🧪 Run tests
+        run: npm test
+
+      - name: 🔐 Security check
+        run: npm audit --audit-level=moderate
