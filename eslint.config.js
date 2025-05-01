@@ -8,23 +8,13 @@ import pluginPrettier from 'eslint-plugin-prettier';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
-  {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-  },
+  js.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
-  {
-    files: ['**/*.{ts,tsx}'],
-    ...tseslint.configs.recommended,
-  },
-  {
-    files: ['**/*.{jsx,tsx}'],
-    ...pluginReact.configs.flat.recommended,
-  },
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
     files: ['**/*.{js,ts,jsx,tsx}'],
     plugins: { prettier: pluginPrettier },
@@ -32,22 +22,6 @@ export default defineConfig([
       'prettier/prettier': 'error',
     },
   },
-  {
-    files: ['**/*.json'],
-    plugins: { json },
-    language: 'json/json',
-    extends: ['json/recommended'],
-  },
-  {
-    files: ['**/*.jsonc'],
-    plugins: { json },
-    language: 'json/jsonc',
-    extends: ['json/recommended'],
-  },
-  {
-    files: ['**/*.css'],
-    plugins: { css },
-    language: 'css/css',
-    extends: ['css/recommended'],
-  },
+  json.configs.recommended,
+  css.configs.recommended,
 ]);
