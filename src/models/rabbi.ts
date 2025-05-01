@@ -1,6 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-export const RabbitStatusEnum = z.enum(["approved", "pending", "no-limit"]);
+export const RabbitStatusEnum = z.enum(['approved', 'pending', 'no-limit']);
 
 export const RabbiSchema = z.object({
   id: z.string(),

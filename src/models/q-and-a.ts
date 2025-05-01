@@ -1,6 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-export const QASubjectSchema = z.enum(["halacha", "emuna", "hashkafa"]);
+export const QASubjectSchema = z.enum(['halacha', 'emuna', 'hashkafa']);
 
 export const QASchema = z.object({
   id: z.string(),

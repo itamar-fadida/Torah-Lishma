@@ -1,6 +1,6 @@
 name: CI for TypeScript
 
-on: [push, pull_request] # Trigger this workflow on every push or PR
+on: pull_request
 
 jobs:
   build:
@@ -23,12 +23,12 @@ jobs:
 
       - name: 💅 Check code formatting with Prettier
         run: npx prettier --write .
-      
+
       - name: 🧹 Lint with ESLint
         run: npm run lint
 
       - name: 🧪 Run tests
         run: npm test
-      
+
       - name: 🔐 Security check
         run: npm audit --audit-level=moderate

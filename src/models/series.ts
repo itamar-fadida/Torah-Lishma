@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const SeriesSchema = z.object({
   id: z.string(), // e.g. "series-001"
