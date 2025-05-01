@@ -28,6 +28,11 @@ export default defineConfig([
     rules: {
       // With React 19, React no longer needs to be in scope
       'react/react-in-jsx-scope': 'off',
+      // Auto-fix the missing rel attribute
+      'react/jsx-no-target-blank': [
+        'error',
+        { enforceDynamicLinks: 'always', allowReferrer: false },
+      ],
     },
   },
   {
