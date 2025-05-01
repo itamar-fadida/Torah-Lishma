@@ -1,0 +1,16 @@
+✅ Variables, props, functions → camelCase
+
+const userName = "Itamar";
+function createLesson() {}
+✅ Types, Interfaces, Enums → PascalCase
+
+type Rabbi = {...};
+interface Lesson {...}
+enum RabbiStatus {...}
+✅ Filenames → kebab-case or camelCase
+Prefer kebab-case for consistency:
+
+models/rabbi.ts
+models/lesson-series.ts
+handlers/create-rabbi.ts
+Avoid PascalCase in file names unless it’s a class or React component.
